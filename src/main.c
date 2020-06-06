@@ -84,9 +84,9 @@ const int status_led_gpio = 13; /*set the gloabl variable for the led to be sued
 void s2_button_callback(uint8_t gpio, void* args, const uint8_t param) {
     
     printf("S2 Button event single press on GPIO : %d\n", gpio);
-    printf("Toggling relay\n");
+    //printf("Toggling relay\n");
     switch_on.value.bool_value = !switch_on.value.bool_value;
-    relay_write(switch_on.value.bool_value, relay_gpio);
+    //relay_write(switch_on.value.bool_value, relay_gpio);
     led_write(switch_on.value.bool_value, LED_GPIO);
     homekit_characteristic_notify(&switch_on, switch_on.value);
 }
